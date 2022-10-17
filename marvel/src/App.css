@@ -27,8 +27,8 @@
 }
 /*Element listing section */
 .row{
-  padding-left: 25%;
-  padding-right: 25%;
+  padding-left: 20%;
+  padding-right: 20%;
 }
 .container {
   display: inline-block;
@@ -37,7 +37,7 @@
   justify-content: center;
   align-items: center;
   max-width: 800px;
-  margin: 80px 30px;
+  margin: 50px 20px;
   padding: 0 20px 0 20px;
 }
 .cardContainer {

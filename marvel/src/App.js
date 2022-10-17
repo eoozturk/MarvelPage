@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react'
+import ReactPaginate from 'react-paginate'
 import axios from 'axios'
 import './App.css';
 
@@ -21,7 +22,7 @@ function App() {
       setItems(characters)
     }else{
       axios
-          .get("Marvel Developer Api Key")
+          .get("http://gateway.marvel.com/v1/public/characters?&limit=20&offset=offset&ts=1&apikey=Marvel API Key&hash=Hash Code")
           .then(list => {
 
             if(items.length > 0){
@@ -59,7 +60,7 @@ function App() {
         return (
           
           <div className='container'>
-              <div className='cardContainer '>
+              <div className='cardContainer'>
                   <div className='card' key={item.id}>
                       <div className='thumbnail'>
                           <img src={item.thumbnail.path + "/portrait_xlarge.jpg"}/>                   
@@ -72,6 +73,19 @@ function App() {
         );
       })}
     </div>
+    <div class="pagination-align">
+            <div class="pagination">
+              <ReactPaginate
+                previousLabel={'<<'}
+                nextLabel={'>>'}
+                breakLabel={'...'}
+                pageCount={78}
+                onPageChange={handlePageClick}
+                containerClassName={'pagination'}
+                onClick={handlePageClick}
+              />         
+            </div>
+        </div>
 
       <div className ="footer">Marvel Studios - 2022</div>
     </div>
